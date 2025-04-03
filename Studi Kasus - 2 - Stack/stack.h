@@ -1,17 +1,27 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "boolean.h"
-#include "node.h"
+// Struktur node untuk stack
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
 
+// Struktur stack
 typedef struct {
-    address top;
+    Node* top;  // Pointer ke elemen atas stack
 } Stack;
 
-void createStack(Stack *s);
-boolean isEmpty(Stack s);
-void push(Stack *s, int data);
-int pop(Stack *s);
-void printStack(Stack s);
+// Fungsi untuk inisialisasi stack
+void initStack(Stack* stack);
+
+// Fungsi untuk memeriksa apakah stack kosong
+int isEmpty(Stack* stack);
+
+// Fungsi untuk menambah elemen ke stack
+void push(Stack* stack, int value);
+
+// Fungsi untuk menghapus elemen dari stack
+int pop(Stack* stack);
 
 #endif
