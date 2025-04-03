@@ -1,19 +1,17 @@
 #ifndef STACK_H
 #define STACK_H
 
-#define MAX_SIZE 100  // Ukuran maksimum stack
+#include "boolean.h"
+#include "node.h"
 
-// Struktur Stack
 typedef struct {
-    int data[MAX_SIZE];
-    int top;
+    address top;
 } Stack;
 
-// operasi stack
-void initStack(Stack *s);
-int isEmpty(Stack *s);
-int isFull(Stack *s);
-void push(Stack *s, int value);
+void createStack(Stack *s);
+boolean isEmpty(Stack s);
+void push(Stack *s, int data);
 int pop(Stack *s);
+void printStack(Stack s);
 
 #endif
